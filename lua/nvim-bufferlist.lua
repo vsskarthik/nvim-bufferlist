@@ -90,10 +90,7 @@ end
 
 local function close_buffer()
 	local selected_line = api.nvim_get_current_line()
-
-	if string.match(selected_line, "^> ") then
-		selected_line = string.match(selected_line, "^> (.-)$")
-	end
+	selected_line = string.match(selected_line, "^%d+ | (.-)$")
 
 	local ls = vim.fn.execute(":ls")
 
