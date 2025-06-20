@@ -44,7 +44,7 @@ local function open_window()
 		vim.api.nvim_buf_get_name(0),
 		"/"
 	)]
-	local border_title = " Buffer List | Current: " .. current_buff_name
+	local border_title = " Buffer List | Current: " .. tostring(current_buff_name)
 	local border_lines = { "╭" .. border_title .. string.rep("─", win_width - string.len(border_title)) .. "╮" }
 	local middle_line = "│" .. string.rep(" ", win_width) .. "│"
 	for _ = 1, win_height do
